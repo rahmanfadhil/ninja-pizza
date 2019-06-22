@@ -11,8 +11,23 @@
 <body>
   <?php include "./templates/header.php" ?>
 
-  <div class="container my-3">
-    <h1>Hello world!</h1>
+  <div class="container my-5">
+    <h1>Contact Me</h1>
+    <form>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="password" class="form-control" id="fullName" placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label for="message">Full Name</label>
+        <textarea id="message" class="form-control" placeholder="Enter your message"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
   </div>
 
   <?php include "./templates/footer.php" ?>
