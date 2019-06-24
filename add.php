@@ -7,9 +7,30 @@
   // }
 
   if (isset($_POST['submit'])) {
-    echo htmlspecialchars($_POST['email']);
-    echo htmlspecialchars($_POST['title']);
-    echo htmlspecialchars($_POST['ingredients']);
+    // echo htmlspecialchars($_POST['email']);
+    // echo htmlspecialchars($_POST['title']);
+    // echo htmlspecialchars($_POST['ingredients']);
+
+    // Check email
+    if (empty($_POST['email'])) {
+      echo 'Email is required! <br />';
+    } else {
+      echo htmlspecialchars($_POST['email']);
+    }
+
+    // Check title
+    if (empty($_POST['title'])) {
+      echo 'Title is required! <br />';
+    } else {
+      echo htmlspecialchars($_POST['title']);
+    }
+
+    // Check ingredients
+    if (empty($_POST['ingredients'])) {
+      echo 'At least one ingredient is required! <br />';
+    } else {
+      echo htmlspecialchars($_POST['ingredients']);
+    }
   }
 
 ?>
