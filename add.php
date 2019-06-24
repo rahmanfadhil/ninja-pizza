@@ -55,17 +55,17 @@
     <form action="add.php" method="POST">
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" value="<?php echo $email ?>">
+        <input type="text" class="form-control" id="email" name="email" placeholder="Enter email" value="<?php echo htmlspecialchars($email) ?>">
         <small class="form-text text-danger"><?php echo $errors['email']; ?></small>
       </div>
       <div class="form-group">
         <label for="title">Title:</label>
-        <input type="text" class="form-control" id="title" name="title" placeholder="Enter pizza title" value="<?php echo $title ?>">
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter pizza title" value="<?php echo htmlspecialchars($title) ?>">
         <small class="form-text text-danger"><?php echo $errors['title']; ?></small>
       </div>
       <div class="form-group">
         <label for="ingredients">Ingredients:</label>
-        <input type="text" class="form-control" id="ingredients" name="ingredients" placeholder="Enter pizza title" value="<?php echo $ingredients ?>">
+        <input type="text" class="form-control" id="ingredients" name="ingredients" placeholder="Enter pizza title" value="<?php echo htmlspecialchars($ingredients) ?>">
         <small class="form-text text-danger"><?php echo $errors['ingredients']; ?></small>
       </div>
       <button type="submit" name="submit" class="btn btn-primary">Submit</button>
