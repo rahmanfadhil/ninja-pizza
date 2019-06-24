@@ -43,6 +43,10 @@
     }
   }
 
+  if (!array_filter($errors)) {
+    header('Location: index.php');
+  }
+
 ?>
 
 <!DOCTYPE html>
