@@ -41,11 +41,13 @@
         $errors['ingredients'] = 'Ingredients must be a comma seperated list!';
       }
     }
+
+    // Redirect if there is not errors inside form
+    if (!array_filter($errors)) {
+      header('Location: index.php');
+    }
   }
 
-  if (!array_filter($errors)) {
-    header('Location: index.php');
-  }
 
 ?>
 
