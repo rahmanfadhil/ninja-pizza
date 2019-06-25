@@ -20,6 +20,7 @@
 
   // Close connection
   mysqli_close($conn);
+
 ?>
 
 <!DOCTYPE html>
@@ -34,8 +35,14 @@
         <div class="col-4">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title"><?= htmlspecialchars($pizza['title']) ?></h5>
-              <p class="card-text"><?= htmlspecialchars($pizza['ingredients']) ?></p>
+              <h5 class="card-title">
+                <?= htmlspecialchars($pizza['title']) ?>
+              </h5>
+              <p class="card-text">
+                <?php foreach (explode(',', $pizza['ingredients']) as $ingredient) : ?>
+                  <li><?= htmlspecialchars($ingredient) ?></li>
+                <?php endforeach ?>
+              </p>
               <a href="#" class="btn btn-primary">More info</a>
             </div>
           </div>
