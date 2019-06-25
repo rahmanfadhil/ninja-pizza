@@ -1,10 +1,6 @@
 <?php
 
-  $conn = mysqli_connect('127.0.0.1', 'root', '12345', 'ninja_pizza');
-
-  if (!$conn) {
-    echo 'Connection Error: ' . mysqli_connect_error() ;
-  }
+  include './config/db_connect.php';
 
   // Write query for all pizzas
   $sql = 'SELECT id, title, ingredients FROM pizzas ORDER BY created_at';
@@ -30,7 +26,7 @@
 
   <div class="container my-5">
     <h1 class="mb-3">Pizzas</h1>
-    <div class="row">
+    <div class="row mb-3">
       <?php foreach ($pizzas as $pizza) : ?>
         <div class="col-4">
           <div class="card">
@@ -43,12 +39,20 @@
                   <li><?= htmlspecialchars($ingredient) ?></li>
                 <?php endforeach ?>
               </p>
-              <a href="#" class="btn btn-primary">More info</a>
+              <a href="details.php?id=<?= $pizza['id'] ?>" class="btn btn-primary">
+                More info
+              </a>
             </div>
           </div>
         </div>
       <?php endforeach ?>
     </div>
+
+    <?php if (count($pizzas) >= 3): ?>
+      <p>There are 3 or more pizzas</p>
+    <?php else: ?>
+      <p>There are less than 3 pizzas</p>
+    <?php endif ?>
   </div>
 
   <?php include "./templates/footer.php" ?>
